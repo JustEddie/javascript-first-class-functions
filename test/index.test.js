@@ -6,12 +6,13 @@ const path = require('path')
 
 describe('index', () => {
   jsdom({
+    url: 'http://localhost',
     src: fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8')
   })
 
   describe('receivesAFunction(callback)', () => {
     it('receives a function and calls it', () => {
-      const spy = expect.createSpy()
+      const spy = () =>{}
 
       receivesAFunction(spy)
 
